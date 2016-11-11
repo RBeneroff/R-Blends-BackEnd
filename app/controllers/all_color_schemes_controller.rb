@@ -1,7 +1,7 @@
 class AllColorSchemesController < ApplicationController
 
   def create
-    all_color_scheme = AllColorSchemes.new(all_color_scheme_params)
+    all_color_scheme = AllColorScheme.new(all_color_scheme_params)
     if all_color_scheme.save
       render json: {status: 200, message: "Successful Color Scheme Saved"}
     else
