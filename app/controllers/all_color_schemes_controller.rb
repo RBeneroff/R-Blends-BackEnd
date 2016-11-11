@@ -19,6 +19,11 @@ class AllColorSchemesController < ApplicationController
     render json: {status: 200, all_color_schemes: all_color_schemes}
   end
 
+  def destroy
+    AllColorScheme.destroy(params[:id])
+    render json: {status: 204}
+  end
+
   private
 
   def all_color_scheme_params
