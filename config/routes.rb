@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :all_color_schemes, only: [:create, :destroy, :index, :show]
+
 end
 
 # Prefix Verb   URI Pattern                                 Controller#Action
