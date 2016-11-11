@@ -1,5 +1,5 @@
 class ColorSchemesController < ApplicationController
-  before_action :set_users, only: [:create, :index, :destroy]
+  before_action :set_users, only: [:create, :index, :destroy, :show]
 
   def set_users
     @user = User.find(params[:user_id])
@@ -20,6 +20,11 @@ class ColorSchemesController < ApplicationController
   def index
     colorSchemes = @user.color_schemes
     render json: {status: 200, colorSchemes: colorSchemes}
+  end
+
+  def show
+    colorScheme = @user.color_schemes.find(params[:id])
+    render json: {status: 200, colorScheme: colorScheme}
   end
 
   def destroy
