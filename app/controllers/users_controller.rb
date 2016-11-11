@@ -20,8 +20,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user
-    render json: {status: 200, users: users}
+    user = User.find(params[:id])
+    render json: {status: 200, user: user}
   end
 
   def login
