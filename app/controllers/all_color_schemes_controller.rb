@@ -10,12 +10,12 @@ class AllColorSchemesController < ApplicationController
   end
 
   def index
-    all_color_schemes = AllColorSchemes.all
+    all_color_schemes = AllColorScheme.all
     render json: {status: 200, all_color_schemes: all_color_schemes}
   end
 
   def show
-    all_color_schemes = AllColorSchemes.find(params[:id])
+    all_color_schemes = AllColorScheme.find(params[:id])
     render json: {status: 200, all_color_schemes: all_color_schemes}
   end
 

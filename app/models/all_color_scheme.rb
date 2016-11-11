@@ -1,2 +1,2 @@
-class ColorScheme < ApplicationRecord
+class AllColorScheme < ApplicationRecord
 end
