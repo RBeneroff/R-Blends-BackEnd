@@ -1,24 +1,10 @@
-# README
+# R-Blends Back-End
+Final Ruby/Rails/AngularJS project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Building a color scheme/blender app where users can create their own color schemes and save them.
 
-Things you may want to cover:
+Front-end: https://github.com/RBeneroff/R-Blends
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Plugins:
+- http://bgrins.github.io/spectrum/?color=%23000000&color2=%233355cc&color3=%237954e4#why-devtools
+- https://github.com/bgrins/spectrum
