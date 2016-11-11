@@ -34,6 +34,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if @user.update(pass_params)
+      render json: {status: 200, user: @user}
+    else
+      render json: {status: 204, message: @user.errors}
+    end
+  end
+
   private
 
   def token(id, username)
