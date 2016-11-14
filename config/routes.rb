@@ -26,3 +26,7 @@ end
 #        PATCH  /users/:id(.:format)                        users#update
 #        PUT    /users/:id(.:format)                        users#update
 #        DELETE /users/:id(.:format)                        users#destroy
+# all_color_schemes GET    /all_color_schemes(.:format)                all_color_schemes#index
+#        POST   /all_color_schemes(.:format)                all_color_schemes#create
+# all_color_scheme GET    /all_color_schemes/:id(.:format)            all_color_schemes#show
+#        DELETE /all_color_schemes/:id(.:format)            all_color_schemes#destroy
