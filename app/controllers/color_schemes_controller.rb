@@ -39,8 +39,8 @@ class ColorSchemesController < ApplicationController
 
   # TODO: complete later
   def all_color_schemes
-    colorSchemes = ColorScheme.all
-    render json: {status: 200, colorSchemes: colorSchemes}
+    allColorSchemes = ColorScheme.all
+    render json: {status: 200, allColorSchemes: allColorSchemes}
   end
 
   private
