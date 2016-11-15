@@ -32,6 +32,11 @@ class ColorSchemesController < ApplicationController
     render json: {status: 204}
   end
 
+  def destroy_all
+    ColorScheme.destroy_all
+    render json: {status: 204}
+  end
+
   # complete later
   def allColorSchemes
     render json: {status: 200, colorSchemes: ColorScheme.all}

@@ -5,7 +5,20 @@ Rails.application.routes.draw do
     resources :color_schemes, only: [:create, :destroy, :index, :update, :show]
     collection do
       post '/login', to: 'users#login'
+      # delete '/users/:user_id/color_schemes', :to => :delete_all
+      # delete on: :color_schemes, action: :destroy_all
+      # delete :destroy_all
+      delete '/:user_id/color_schemes', to: 'color_schemes#destroy_all'
+
+      # resources :color_schemes do
+      #   collection do
+      #     delete :destroy_all
+      #   end
+      # end
+
     end
+
+
   end
 
   resources :all_color_schemes, only: [:create, :destroy, :index, :show]
@@ -20,6 +33,7 @@ end
 #        PUT    /users/:user_id/color_schemes/:id(.:format) color_schemes#update
 #        DELETE /users/:user_id/color_schemes/:id(.:format) color_schemes#destroy
 # login_users POST   /users/login(.:format)                      users#login
+#        DELETE /users/:user_id/color_schemes(.:format)     color_schemes#destroy_all
 #  users GET    /users(.:format)                            users#index
 #        POST   /users(.:format)                            users#create
 #   user GET    /users/:id(.:format)                        users#show
