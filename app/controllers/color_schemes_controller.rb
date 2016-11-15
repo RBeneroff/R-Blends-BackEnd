@@ -33,7 +33,8 @@ class ColorSchemesController < ApplicationController
   end
 
   def destroy_all
-    ColorScheme.destroy_all
+    # @user.color_schemes.destroy_all
+    ColorScheme.where(@user).destroy_all
     render json: {status: 204}
   end
 

@@ -1,33 +1,24 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  get 'color_schemes/all_color_schemes', to: 'color_schemes#all_color_schemes'
   resources :users, only: [:create, :show, :destroy, :index, :update] do
     resources :color_schemes, only: [:create, :destroy, :index, :update, :show]  do
     end
     collection do
       post '/login', to: 'users#login'
-      # delete '/users/:user_id/color_schemes', :to => :delete_all
-      # delete on: :color_schemes, action: :destroy_all
-      # delete :destroy_all
       delete '/:user_id/color_schemes', to: 'color_schemes#destroy_all'
-
-      # resources :color_schemes do
-      #   collection do
-      #     delete :destroy_all
-      #   end
-      # end
 
     end
 
 
   end
 
+  get 'color_schemes/all_color_schemes', to: 'color_schemes#all_color_schemes'
   #resources :all_color_schemes, only: [:create, :destroy, :index, :show]
 
 end
 
 # Prefix Verb   URI Pattern                                 Controller#Action
+# color_schemes_all_color_schemes GET    /color_schemes/all_color_schemes(.:format)  color_schemes#all_color_schemes
 # user_color_schemes GET    /users/:user_id/color_schemes(.:format)     color_schemes#index
 #        POST   /users/:user_id/color_schemes(.:format)     color_schemes#create
 # user_color_scheme GET    /users/:user_id/color_schemes/:id(.:format) color_schemes#show
@@ -42,7 +33,3 @@ end
 #        PATCH  /users/:id(.:format)                        users#update
 #        PUT    /users/:id(.:format)                        users#update
 #        DELETE /users/:id(.:format)                        users#destroy
-# all_color_schemes GET    /all_color_schemes(.:format)                all_color_schemes#index
-#        POST   /all_color_schemes(.:format)                all_color_schemes#create
-# all_color_scheme GET    /all_color_schemes/:id(.:format)            all_color_schemes#show
-#        DELETE /all_color_schemes/:id(.:format)            all_color_schemes#destroy
