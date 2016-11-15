@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get 'color_schemes/all_color_schemes', to: 'color_schemes#all_color_schemes'
   resources :users, only: [:create, :show, :destroy, :index, :update] do
-    resources :color_schemes, only: [:create, :destroy, :index, :update, :show]
+    resources :color_schemes, only: [:create, :destroy, :index, :update, :show]  do
+    end
     collection do
       post '/login', to: 'users#login'
       # delete '/users/:user_id/color_schemes', :to => :delete_all
@@ -21,7 +23,7 @@ Rails.application.routes.draw do
 
   end
 
-  resources :all_color_schemes, only: [:create, :destroy, :index, :show]
+  #resources :all_color_schemes, only: [:create, :destroy, :index, :show]
 
 end
 
