@@ -33,8 +33,8 @@ class ColorSchemesController < ApplicationController
   end
 
   def destroy_all
-    # @user.color_schemes.destroy_all
-    ColorScheme.where(@user).destroy_all
+    @user = User.find(params[:user_id])
+    ColorScheme.where(:user_id => @user).destroy_all
     render json: {status: 204}
   end
 
