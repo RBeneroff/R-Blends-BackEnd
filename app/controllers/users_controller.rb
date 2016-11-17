@@ -21,6 +21,13 @@ class UsersController < ApplicationController
 
   def show
     user = User.find(params[:id])
+
+    # if (token) {
+    #   User.findOne({ _id: decoded.iss}, function(err, user) {
+    #     req.user = user;
+    #     });
+    # }
+
     render json: {status: 200, user: user}
   end
 
@@ -47,6 +54,10 @@ class UsersController < ApplicationController
   def token(id, username)
     JWT.encode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
   end
+
+  # def saveUser(id, username)
+  #   JWT.decode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
+  # end
 
   def payload(id, username)
     {
