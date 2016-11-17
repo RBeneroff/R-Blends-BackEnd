@@ -10,21 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111212512) do
+ActiveRecord::Schema.define(version: 20161117001927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "all_color_schemes", force: :cascade do |t|
-    t.string   "color_scheme_name"
-    t.string   "color_one"
-    t.string   "color_two"
-    t.string   "color_three"
-    t.string   "color_four"
-    t.string   "color_five"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
 
   create_table "color_schemes", force: :cascade do |t|
     t.string   "color_scheme_name"

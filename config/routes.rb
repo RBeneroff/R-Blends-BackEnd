@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
   resources :users, only: [:create, :show, :destroy, :index, :update] do
     resources :color_schemes, only: [:create, :destroy, :index, :update, :show]  do
     end
@@ -9,11 +10,9 @@ Rails.application.routes.draw do
 
     end
 
-
   end
 
   get 'color_schemes/all_color_schemes', to: 'color_schemes#all_color_schemes'
-  #resources :all_color_schemes, only: [:create, :destroy, :index, :show]
 
 end
 

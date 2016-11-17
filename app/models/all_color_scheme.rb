@@ -1,2 +1,0 @@
-class AllColorScheme < ApplicationRecord
-end
