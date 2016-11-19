@@ -16,7 +16,6 @@ class ColorSchemesController < ApplicationController
     end
   end
 
-  # should this be colorSchemes, colorschemes or color_schemes?
   def index
     colorSchemes = @user.color_schemes
     render json: {status: 200, colorSchemes: colorSchemes}

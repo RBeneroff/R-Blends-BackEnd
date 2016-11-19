@@ -21,13 +21,6 @@ class UsersController < ApplicationController
 
   def show
     user = User.find(params[:id])
-
-    # if (token) {
-    #   User.findOne({ _id: decoded.iss}, function(err, user) {
-    #     req.user = user;
-    #     });
-    # }
-
     render json: {status: 200, user: user}
   end
 
@@ -55,13 +48,9 @@ class UsersController < ApplicationController
     JWT.encode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
   end
 
-  # def saveUser(id, username)
-  #   JWT.decode(payload(id, username), ENV['JWT_SECRET'], 'HS256')
-  # end
-
   def payload(id, username)
     {
-      exp: (Time.now + 1.day).to_i, #expires 24 hours from now
+      exp: (Time.now + 1.day).to_i,
       iat: Time.now.to_i,
       iss: ENV['JWT_ISSUER'],
       user: {
