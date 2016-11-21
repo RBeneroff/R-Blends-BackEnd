@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 end
 
 # Prefix Verb   URI Pattern                                 Controller#Action
-# color_schemes_all_color_schemes GET    /color_schemes/all_color_schemes(.:format)  color_schemes#all_color_schemes
 # user_color_schemes GET    /users/:user_id/color_schemes(.:format)     color_schemes#index
 #        POST   /users/:user_id/color_schemes(.:format)     color_schemes#create
 # user_color_scheme GET    /users/:user_id/color_schemes/:id(.:format) color_schemes#show
@@ -26,6 +25,7 @@ end
 #        PUT    /users/:user_id/color_schemes/:id(.:format) color_schemes#update
 #        DELETE /users/:user_id/color_schemes/:id(.:format) color_schemes#destroy
 # login_users POST   /users/login(.:format)                      users#login
+# current_user_users GET    /users/current-user(.:format)               users#current
 #        DELETE /users/:user_id/color_schemes(.:format)     color_schemes#destroy_all
 #  users GET    /users(.:format)                            users#index
 #        POST   /users(.:format)                            users#create
@@ -33,3 +33,4 @@ end
 #        PATCH  /users/:id(.:format)                        users#update
 #        PUT    /users/:id(.:format)                        users#update
 #        DELETE /users/:id(.:format)                        users#destroy
+# color_schemes_all_color_schemes GET    /color_schemes/all_color_schemes(.:format)  color_schemes#all_color_schemes

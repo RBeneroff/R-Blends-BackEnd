@@ -24,15 +24,15 @@ class UsersController < ApplicationController
     render json: {status: 200, user: user}
   end
 
-  # def current
-  #   user = current_user
-  #   user = User.find(user[0]['user']['id'])
-  #   if user
-  #     render json: {status: 200, user: user}
-  #   else
-  #     render json: {status: 422, message: "no current user"}
-  #   end
-  # end
+  def current
+    user = current_user
+    user = User.find(user[0]['user']['id'])
+    if user
+      render json: {status: 200, user: user}
+    else
+      render json: {status: 422, message: "no logged in user"}
+    end
+  end
 
   def login
     user = User.find_by(username: params[:user][:username])
